@@ -35,13 +35,14 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/users', user.list);
+
+
+
+
 app.get('/keyboard', function(req,res){
 	var menu ={
-	          "message": {
-	              "text": '안녕하세요 AV저장소 입니다. 아래 버튼으로 원하시는 정보를 확인하세요!!!'
-	          },
 			'type':'buttons',
-			'buttons':['1월 BEST AV배우','2018년도 BEST AV','1','2','3']
+			'buttons':['안녕하세요 AV저장소 입니다. 아래 버튼으로 원하시는 정보를 확인하세요!!!','1','2','3']
 	};
 	  res.set({
 	      'content-type': 'application/json'
@@ -60,19 +61,17 @@ app.post('/message',function (req, res) {
 
 
     //안녕이라고 입력되었다면...
-    if(_obj.content == '1월 BEST AV배우')
+    if(_obj.content == '안녕하세요 AV저장소 입니다. 아래 버튼으로 원하시는 정보를 확인하세요!!!')
     {
       //"안녕"이라고 메시지 보내고
       //'누구니' '메롱' 버튼 보여줌
       let massage = {
           "message": {
-              "text": '안녕'
+              "text": '안녕하세요 AV저장소 입니다. 아래 버튼으로 원하시는 정보를 확인하세요!!!'
           },
           "keyboard": {
               "type": "buttons",
-              "buttons": [
-                  "2018년도 BEST AV"
-              ]
+              'buttons':['안녕하세요 AV저장소 입니다. 아래 버튼으로 원하시는 정보를 확인하세요!!!','1','2','3']
           }
       };
 
@@ -81,33 +80,7 @@ app.post('/message',function (req, res) {
           'content-type': 'application/json'
       }).send(JSON.stringify(massage));
     }
-    //메롱이라고 입력되었다면
-    else if(_obj.content == '2018년도 BEST AV')
-    {
-      //"죽는다."이라고 메시지 보내고
-      //'안녕' '누구니' 버튼 보여줌
-      let massage = {
-          "message": {
-              "photo":{
-          	    "url": "http://testslime.us-east-2.elasticbeanstalk.com/images/kirara.jpeg",
-          	    "width": 720,
-          	    "height": 630
-          	  }
-          }
-      
-     
-      ,
-          "keyboard": {
-              "type": "buttons",
-              "buttons": [
-                  "1월 BEST AV배우"
-              ]
-          }
-      };
-      res.set({
-          'content-type': 'application/json'
-      }).send(JSON.stringify(massage));
-    }
+        
     else if(_obj.content == '1')
     {
       //"죽는다."이라고 메시지 보내고
@@ -122,11 +95,7 @@ app.post('/message',function (req, res) {
           },
           "keyboard": {
               "type": "buttons",
-              "buttons": [
-                  "1",
-                  "2",
-                  "3"
-              ]
+              'buttons':['안녕하세요 AV저장소 입니다. 아래 버튼으로 원하시는 정보를 확인하세요!!!','1','2','3']
           }
       };
       res.set({
@@ -143,11 +112,7 @@ app.post('/message',function (req, res) {
           },
           "keyboard": {
               "type": "buttons",
-              "buttons": [
-                  "1",
-                  "2",
-                  "3"
-              ]
+              'buttons':['안녕하세요 AV저장소 입니다. 아래 버튼으로 원하시는 정보를 확인하세요!!!','1','2','3']
           }
       };
       res.set({
@@ -164,11 +129,7 @@ app.post('/message',function (req, res) {
           },
           "keyboard": {
               "type": "buttons",
-              "buttons": [
-                  "1",
-                  "2",
-                  "3"
-              ]
+              'buttons':['안녕하세요 AV저장소 입니다. 아래 버튼으로 원하시는 정보를 확인하세요!!!','1','2','3']
           }
       };
       res.set({
@@ -185,11 +146,7 @@ app.post('/message',function (req, res) {
             },
             "keyboard": {
                 "type": "buttons",
-                "buttons": [
-                    "안녕",
-                    "메롱",
-                    "누구니"
-                ]
+                'buttons':['안녕하세요 AV저장소 입니다. 아래 버튼으로 원하시는 정보를 확인하세요!!!','1','2','3']
             }
         };
         res.set({
